@@ -9,7 +9,7 @@ def avg(x,fname,name,h=1e-2):
     func=getattr(fun,fname)
     for i in range(len(x)):
         sum+=h*func(x[i],name)
-    avg=sum/x[-1]-x[0]
+    avg=sum/(x[-1]-x[0])
     if abs(avg)>=1e10:
         return 'inf'
     else:
@@ -108,4 +108,5 @@ def Dim4plot_func(x,y):
     plt.rcParams['font.sans-serif'] = ['Microsoft JhengHei']  # 或 'SimHei', 'PMingLiU' 等支援中文的字型
     plt.rcParams['axes.unicode_minus'] = False  
     plt.suptitle('3D重力場的等高線切片')
+
     plt.show()
